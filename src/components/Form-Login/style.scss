@@ -1,0 +1,53 @@
+.form-login {
+  background: rgb(39, 174, 95);
+  border-radius: 30px;
+  display: flex;
+  width: 40%;
+
+  form {
+    background-image: url("src/assets/allumoji-black.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 100%;
+    font-family: "Comfortaa", sans-serif;
+    padding: 40px;
+
+    .remember {
+      display: flex;
+      margin: 0;
+      padding: 1em;
+      font-weight: bold;
+      font-size: .9em;
+      justify-content: center;
+      align-items: center;
+    }
+
+    input {
+      margin: 1em;
+      padding: .8em;
+      background: none;
+      border-top: 0;
+      border-right: 0;
+      border-left: 0;
+      border-bottom: white solid 2px;
+      display: flex;
+
+      p {
+        font-weight: bold
+      }
+    }
+    label{
+      display: flex;
+      font-weight: bolder;
+    }
+
+    button {
+      margin-top: 50%;
+      font-weight: bolder;
+      width: 12em;
+      height: 4em;
+      border: none;
+      background: linear-gradient(180deg, #1E9F98 0%, #24BD97 100%)
+    }
+  }
+}

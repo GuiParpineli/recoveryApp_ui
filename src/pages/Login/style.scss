@@ -1,0 +1,16 @@
+.main {
+  display: flex;
+  padding: 25px;
+
+  .logo-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    .logo {
+      width: 20%;
+      min-width: 6em;
+      top: 80%;
+      padding: 10px;
+    }
+  }
+}
