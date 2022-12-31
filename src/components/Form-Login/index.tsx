@@ -12,9 +12,9 @@ export function FormLogin() {
 
     }
 
-    const [password, setPassword] = useState("")
-    const [user, setUser] = useState("")
-    const [errorLogin, setErrorLogin] = useState(false)
+    const [password, setPassword] = useState<string>(null)
+    const [user, setUser] = useState<string>(null)
+    const [errorLogin, setErrorLogin] = useState<boolean>(false)
 
 
     const data: data = {
