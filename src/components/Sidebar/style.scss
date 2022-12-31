@@ -1,8 +1,34 @@
 .container-sidebar {
   background: #34b256;
-  width: 10em;
-  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
   border-radius: 30px;
-  padding: .8em;
-  margin: .5em;
+  padding: 10px 0 0 10px;
+  margin: .8em;
+
+  .menu-side-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    list-style: none;
+    gap: 60px;
+
+    .menu-list {
+      padding: 0 0 0 20px;
+      font-weight: 700;
+      width: 150%;
+      li {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    div:first-child {
+      border-radius: 10px;
+      background: white;
+      color: black;
+    }
+  }
 }
