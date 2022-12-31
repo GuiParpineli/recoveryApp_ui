@@ -2,6 +2,7 @@ import './style.scss'
 import {Header} from "../../components/Header";
 import {Footer} from "../../components/Footer";
 import {Sidebar} from "../../components/Sidebar";
+import {Outlet} from "react-router-dom";
 
 export function Home() {
     return (
@@ -13,7 +14,7 @@ export function Home() {
                 <Sidebar/>
             </div>
             <div className="home-content">
-                <h1>Hello World!</h1>
+                <Outlet/>
             </div>
             <div className="home-footer">
                 <Footer/>

@@ -2,13 +2,19 @@ import './App.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {Home} from "./pages/Home";
 import {Login} from "./pages/Login";
+import {DashBoard} from "./pages/DashBoard";
 
 function App() {
     const router = createBrowserRouter(
         [
             {
                 path: "",
-                element: <Home/>
+                element: <Home/>,
+                children: [{
+                    path: "",
+                    element: <DashBoard/>
+                }
+                ]
             },
             {
                 path: "login",
