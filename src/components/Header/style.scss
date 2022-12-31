@@ -1,26 +1,64 @@
 .header-main {
-  margin: 0;
-  background: #d6ded7;
-  padding: 20px;
-  border: 0;
+  padding: 10px;
   display: flex;
-  justify-content: start;
 
   .logo-header-home {
-    width: 5em;
-    margin-right: 180px;
-    position: relative;
+    justify-content: left;
+
+    img {
+      width: 10%;
+      min-width: 100px;
+      padding: 10px;
+    }
   }
 
-  .perfil-button{
-
+  .perfil-container {
+    display: flex;
+    border-radius: 10px;
+    align-items: center;
+    gap: 10px;
+    button{
+      border: none;
+      background: #34b256;
+      color: black;
+      border-radius: 10px;
+      padding: 10px;
+    }
+    button:hover{
+      transform: scale(1.2);
+    }
   }
 
   .header-main-input {
-    background: #c7c7c7;
-    width: 50em;
+    display: flex;
+    position: relative;
+    right: 50%;
+    transform: translate(50%);
+    margin-right: 10px;
     border: 0;
     border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+
+    input {
+      border-radius: 10px;
+      width: 500px;
+      padding: 10px;
+      background: none;
+      border: #34b256 solid 2px;
+    }
+    input:hover{
+      transform: scale(.9);
+    }
+    button{
+      color: black;
+      background: none;
+      border: 0;
+    }
+    button:hover{
+      transform: scale(1.3);
+    }
+
   }
 
 }

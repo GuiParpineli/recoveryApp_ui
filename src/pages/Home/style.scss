@@ -1,11 +1,16 @@
 .home {
   color: black;
+  background-image: url("src/assets/img.png");
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: top right;
   display: grid;
   grid-template-columns: 1fr 1fr 5fr 1fr;
 
   .home-header {
     grid-column-start: 1;
     grid-column-end: 5;
+    grid-row-end: 2;
   }
 
   .home-content {
