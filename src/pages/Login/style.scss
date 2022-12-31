@@ -1,19 +1,27 @@
 
-  .main {
-    display: flex;
-    padding: 10px;
-    position: relative;
+.main {
+  padding: 80px;
+  position: relative;
+  top: 20%;
 
+  .container-main {
+    display: flex;
     .logo-container {
       display: flex;
       align-items: flex-end;
       justify-content: flex-start;
 
       .logo {
-        width: 10%;
-        min-width: 6em;
+        width: 40%;
+        min-width: 15em;
         top: 80%;
         padding: 10px;
       }
     }
   }
+    footer{
+      text-align: center;
+      padding: 5em;
+      color: black;
+    }
+}
