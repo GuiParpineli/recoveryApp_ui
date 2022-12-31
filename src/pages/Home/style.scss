@@ -11,6 +11,8 @@
     grid-column-start: 1;
     grid-column-end: 5;
     grid-row-end: 2;
+    background: rgba(255,255,255,.5);
+    position: fixed;
   }
 
   .home-content {
@@ -18,14 +20,19 @@
     grid-column-end: 5;
     grid-row-start: 2;
     grid-row-end: 4;
+    margin-top: 5%;
   }
 
   .home-sidebar {
     grid-column-start: 1;
     grid-row-end: 3;
+    position: fixed;
+    top: 10%;
   }
   .home-footer{
     grid-column-start: 1;
     grid-column-end: 5;
+    position: fixed;
+    bottom: 0;
   }
 }

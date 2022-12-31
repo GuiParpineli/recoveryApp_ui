@@ -18,6 +18,7 @@
     .menu-list {
       font-weight: 700;
       width: 150%;
+
       li {
         display: flex;
         align-items: center;
@@ -28,7 +29,9 @@
       border-radius: 10px;
       background: white;
       color: #34b256;
-    }div:last-child {
+    }
+
+    div:last-child {
       margin-top: 200px;
     }
   }
