@@ -22,21 +22,21 @@
       align-items: center;
     }
 
-    input {
-      margin: 1em;
-      padding: .8em;
+    .user-password {
+      padding: 1em;
       background: white;
       border-radius: 30px;
       border: none;
+      width: 15em;
+      margin: 1em;
       display: flex;
 
-      p {
-        font-weight: bold
-      }
     }
 
     label {
       display: flex;
+      margin: 1em;
+      text-align: start;
       font-weight: bolder;
     }
 

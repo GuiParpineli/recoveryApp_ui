@@ -31,10 +31,11 @@ export function FormLogin() {
 
     return (
         <div className="form-login">
-            <form action="Login">
-                <div>
+            <form >
+                <div >
                     <label htmlFor="input-user">User</label>
                     <input
+                        className="user-password"
                         id="input-user" type="text"
                         placeholder="Digite seu usuario"
                         name="user"
@@ -45,6 +46,7 @@ export function FormLogin() {
                 <div>
                     <label htmlFor="input-password">Password</label>
                     <input
+                        className="user-password"
                         id="input-password"
                         type="text"
                         placeholder="Digite sua senha"
