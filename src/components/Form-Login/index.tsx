@@ -30,9 +30,9 @@ export function FormLogin() {
     }
 
     return (
-        <div className="form-login">
-            <form >
-                <div >
+        <div className="login">
+            <form className="form-login" >
+                <div className="input-login">
                     <label htmlFor="input-user">User</label>
                     <input
                         className="user-password"
@@ -43,7 +43,7 @@ export function FormLogin() {
                         onChange={e => setUser(e.target.value)}
                     />
                 </div>
-                <div>
+                <div className="input-login">
                     <label htmlFor="input-password">Password</label>
                     <input
                         className="user-password"
@@ -59,13 +59,11 @@ export function FormLogin() {
                     <input id="remember" type="checkbox"/>
                     <label htmlFor="remember">Relembrar</label>
                 </div>
-                <div>
                     <p>Esqueceu a senha?</p>
-                </div>
                 <div className="login-error">
                     {errorLogin && <small>Erro ao fazer login, verifique suas credenciais</small>}
                 </div>
-                <div>
+                <div className="btn-submit">
                     <button type="submit">Login</button>
                 </div>
             </form>

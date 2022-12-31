@@ -1,0 +1,26 @@
+.home {
+  color: black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 5fr 1fr;
+
+  .home-header {
+    grid-column-start: 1;
+    grid-column-end: 5;
+  }
+
+  .home-content {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 4;
+  }
+
+  .home-sidebar {
+    grid-column-start: 1;
+    grid-row-end: 3;
+  }
+  .home-footer{
+    grid-column-start: 1;
+    grid-column-end: 5;
+  }
+}

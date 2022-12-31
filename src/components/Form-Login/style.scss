@@ -1,8 +1,8 @@
-.form-login {
+.login{
   background: rgb(39, 174, 95);
   border-radius: 30px;
 
-  form {
+ .form-login {
     background-image: url("src/assets/allumoji-black.png");
     background-repeat: no-repeat;
     background-position: right top;
@@ -29,22 +29,17 @@
       border: none;
       width: 15em;
       margin: 1em;
-      display: flex;
-
     }
 
-    label {
-      display: flex;
-      margin: 1em;
-      text-align: start;
-      font-weight: bolder;
+    .input-login {
+
     }
 
     .login-error {
       color: red;
     }
 
-    button {
+    .btn-submit button{
       margin-top: 5em;
       font-weight: bolder;
       width: 12em;
