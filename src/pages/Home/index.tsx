@@ -16,9 +16,6 @@ export function Home() {
             <div className="home-content">
                 <Outlet/>
             </div>
-            <div className="home-footer">
-                <Footer/>
-            </div>
         </div>
     )
 }

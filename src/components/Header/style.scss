@@ -14,17 +14,25 @@
 
   .perfil-container {
     display: flex;
+    padding: 10px;
     border-radius: 10px;
     align-items: center;
     gap: 10px;
-    button{
+
+    button {
       border: none;
       background: #34b256;
       color: #ffffff;
       border-radius: 10px;
       padding: 10px;
+      margin: 5px;
     }
-    button:hover{
+
+    button:hover {
+      color: black;
+    }
+
+    button:active {
       transform: scale(1.2);
     }
   }
@@ -33,32 +41,70 @@
     display: flex;
     position: relative;
     right: 50%;
-    transform: translate(50%);
     margin-right: 10px;
-    border: 0;
+    transform: translate(50%);
     border-radius: 10px;
     justify-content: center;
     align-items: center;
 
     input {
+      color: black;
       border-radius: 10px;
       width: 500px;
+      border: #3e3e3e solid 2px;
       padding: 10px;
       background: white;
-      border: #34b256 solid 2px;
     }
-    input:hover{
-      transform: scale(.9);
-    }
-    button{
-      color: black;
-      background: none;
-      border: 0;
-    }
-    button:hover{
-      transform: scale(1.3);
+
+    input:focus {
+      transform: scale(1.1);
     }
 
   }
 
+  .search-container-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    right: 35%;
+
+    .search-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 10px;
+      background: #34b256;
+    }
+
+    button:hover {
+      color: #000000;
+    }
+
+    button:active {
+      color: white;
+      transform: scale(1.3);
+    }
+  }
+
+  @media (max-width: 1610px) {
+    .header-main-input {
+      input {
+        width: 350px;
+      }
+    }
+  }
+  @media (max-width: 1260px) {
+    .header-main-input {
+      input {
+        width: 200px;
+        right: -50;
+        transform: translate(50%);
+      }
+    }
+    .search-container-icon {
+      right: 30%;
+    }
+  }
 }

@@ -8,11 +8,17 @@ export function Header() {
             </div>
             <div className="header-main-input">
                 <input type="text"/>
+            </div>
+            <div className="search-container-icon">
                 <button className="search-button">
                     <span className="material-symbols-outlined black"> search </span>
+                    <p>Buscar</p>
                 </button>
             </div>
             <div className="perfil-container">
+                <button className="notification-button">
+                    <span className="material-symbols-outlined"> notifications </span>
+                </button>
                 <button className="perfil-button">
                     <span className="material-symbols-outlined"> person </span>
                 </button>

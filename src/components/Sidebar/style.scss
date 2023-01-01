@@ -8,6 +8,7 @@
 
   .menu-side-container {
     display: flex;
+    padding-left: 10px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -17,11 +18,19 @@
 
     .menu-list {
       font-weight: 700;
-      width: 150%;
+      width: 100%;
+      padding-right: 10px;
 
       li {
         display: flex;
+        padding: 5px;
         align-items: center;
+      }
+      li:hover{
+        color: black;
+      }
+      li:active{
+        transform: scale(.9);
       }
     }
 
@@ -32,7 +41,7 @@
     }
 
     div:last-child {
-      margin-top: 200px;
+      margin-top: 80%;
     }
   }
 }
