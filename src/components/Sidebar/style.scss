@@ -12,13 +12,13 @@
     align-items: center;
     color: white;
     list-style: none;
-    gap: 60px;
+    gap: 20px;
 
     .menu-list {
       display: inline-flex;
       font-weight: 700;
-      width: 110%;
-      padding-right: 10px;
+      width: 120%;
+      padding: 10px;
 
       a {
         display: flex;
@@ -47,7 +47,8 @@
       li {
         display: inline-flex;
         font-weight: 700;
-        width: 110%;
+        width: 100%;
+        border: 0;
         border-radius: 10px;
         background: white;
         color: black;
