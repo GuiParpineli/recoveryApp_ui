@@ -39,6 +39,7 @@ export function MainPage() {
                 {
                     cases.map(
                         a => <TableMainPage
+                            key={a.id}
                             data={a}
                         />
                     )
