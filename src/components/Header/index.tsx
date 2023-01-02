@@ -19,9 +19,6 @@ export function Header() {
                 <button className="notification-button">
                     <span className="material-symbols-outlined"> notifications </span>
                 </button>
-                <button className="perfil-button">
-                    <span className="material-symbols-outlined"> person </span>
-                </button>
                 <button className="logout-button">
                     <span className="material-symbols-outlined"> logout </span>
                 </button>

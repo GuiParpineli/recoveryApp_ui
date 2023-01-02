@@ -1,0 +1,35 @@
+.card-container {
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+  text-align: center;
+
+  .cards {
+    width: 20%;
+    height: 180px;
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    h1{
+      font-size: 2.5em;
+    }
+  }
+
+  .one {
+    background: red;
+  }
+
+  .two {
+    background: #27ae5f;
+  }
+
+  .three {
+    background: #ffc857;
+  }
+
+  .four {
+    background: #116447;
+  }
+
+}

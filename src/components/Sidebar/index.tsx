@@ -18,7 +18,7 @@ export function Sidebar() {
     return (
         <div className="container-sidebar">
             <ul className="menu-side-container">
-                <div className="menu-list">
+                <div className="menu-list active">
                     <li>
                         <Link to="mainpage" id="0" onClick={activeMenu}>
                             <span id="0" onClick={activeMenu} className="material-symbols-outlined">Home </span>
@@ -29,40 +29,32 @@ export function Sidebar() {
                 <div className={`menu-list`}>
                     <li>
                         <Link to="/dashboard" id="1" onClick={activeMenu}>
-                            <span id="1" onClick={activeMenu} className="material-symbols-outlined">Home</span>
-                            <p id="1" onClick={activeMenu}>Home</p>
+                            <span id="1" onClick={activeMenu} className="material-symbols-outlined">dashboard</span>
+                            <p id="1" onClick={activeMenu}>DashBoard</p>
                         </Link>
                     </li>
                 </div>
                 <div className={`menu-list`}>
                     <li>
                         <Link to="" id="2" onClick={activeMenu}>
-                            <span id="2" onClick={activeMenu} className="material-symbols-outlined">Home</span>
-                            <p id="2" onClick={activeMenu}>Home</p>
+                            <span id="2" onClick={activeMenu} className="material-symbols-outlined">calculate</span>
+                            <p id="2" onClick={activeMenu}>Calculadora</p>
                         </Link>
                     </li>
                 </div>
                 <div className={`menu-list`}>
                     <li>
                         <Link to="" id="3" onClick={activeMenu}>
-                            <span id="3" onClick={activeMenu} className="material-symbols-outlined">Home </span>
-                            <p id="3" onClick={activeMenu}>Home</p>
+                            <span id="3" onClick={activeMenu} className="material-symbols-outlined">event</span>
+                            <p id="3" onClick={activeMenu}>Agenda</p>
                         </Link>
                     </li>
                 </div>
                 <div className={`menu-list`}>
                     <li>
                         <Link to="" id="4" onClick={activeMenu}>
-                            <span id="4" onClick={activeMenu} className="material-symbols-outlined">Home </span>
-                            <p id="4" onClick={activeMenu}>Home</p>
-                        </Link>
-                    </li>
-                </div>
-                <div className={`menu-list`}>
-                    <li>
-                        <Link to="" id="5" onClick={activeMenu}>
-                            <span id="5" onClick={activeMenu} className="material-symbols-outlined">Settings</span>
-                            <p id="5" onClick={activeMenu}>Configurações</p>
+                            <span id="4" onClick={activeMenu} className="material-symbols-outlined">person</span>
+                            <p id="4" onClick={activeMenu}>Perfil</p>
                         </Link>
                     </li>
                 </div>
