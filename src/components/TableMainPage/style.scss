@@ -1,0 +1,19 @@
+.table-component {
+  .table-container {
+    width: 100%;
+
+    tr {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
+
+    th {
+      font-weight: normal;
+      padding: 10px;
+      margin: 10px;
+    }
+  }
+}

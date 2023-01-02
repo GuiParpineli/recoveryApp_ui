@@ -1,5 +1,8 @@
 .main-login {
   padding: 80px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   position: relative;
 
   .container-main-login {

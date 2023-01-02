@@ -1,21 +1,45 @@
 import "./style.scss"
+import {TableMainPage} from "../../components/TableMainPage";
+import {useEffect, useState} from "react";
+import axios from "axios";
+
 export function MainPage() {
+
+    const [cases, setCases] = useState([])
+
+    useEffect(() => {
+       try {
+            fetch("http://localhost:8080/plan/allfull").then(
+                res => {
+                    res.json().then(
+                        data =>
+                            setCases(data)
+                    )
+                }
+            )
+        } catch (error) {
+            console.log(error)
+        }
+        console.log(cases)
+    }, [])
+
+
     return (
         <main className="container-main-page">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Adipisci aliquam aspernatur distinctio dolore explicabo, ipsa
-                laboriosam libero maiores molestias nihil obcaecati omnis optio quod
-                sunt voluptatem? Animi aperiam consectetur inventore nesciunt repudiandae
-                sapiente voluptate. Animi atque cum debitis delectus dolorem doloremque
-                earum eos error, est impedit ipsam magnam minus, nobis officiis repellat
-                repellendus sequi soluta tempore unde velit! Commodi explicabo facere iure,
-                magni nam odit quisquam repellat ut! Alias architecto cupiditate ex
-                excepturi facere laudantium obcaecati possimus quae soluta temporibus.
-                Enim fuga fugiat incidunt itaque perspiciatis! Blanditiis cum doloremque,
-                excepturi facere ipsam laborum nesciunt nulla placeat praesentium
-                repellendus sapiente sunt!
-            </p>
+            <table className="table-title">
+                <tr>
+                    <th> Nome</th>
+                    <th> Email</th>
+                    <th> Chegada no Setor</th>
+                </tr>
+            </table>
+            {
+                cases.map(
+                    a => <TableMainPage
+                        data={a}
+                    />
+                )
+            }
         </main>
     )
 }

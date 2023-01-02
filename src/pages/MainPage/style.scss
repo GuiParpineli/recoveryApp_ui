@@ -1,11 +1,24 @@
-.container-main-page{
-  background: green;
-  padding: 10em;
+.container-main-page {
+  background: rgba(224, 224, 225, .8);
+  padding: 5em;
   border: #747474 solid 1px;
   margin: 20px;
   border-radius: 20px;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+  .table-title {
+    background: rgb(46, 47, 58);
+    color: white;
+    border-radius: 30px;
+    width: 100%;
+
+    tr {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      padding: 10px;
+
+      th {
+      }
+    }
+  }
 }
