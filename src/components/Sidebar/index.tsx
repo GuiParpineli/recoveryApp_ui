@@ -27,9 +27,9 @@ export function Sidebar() {
             <ul className="menu-side-container">
                 <div className="menu-list hider" onClick={hideBar}>
                     <li className="hider" onClick={hideBar}>
-                        { barHide ?
+                        {barHide ?
                             <span onClick={hideBar} className="material-symbols-outlined"> keyboard_arrow_right </span>
-                                :
+                            :
                             <span onClick={hideBar} className="material-symbols-outlined"> navigate_before </span>
                         }
                     </li>
