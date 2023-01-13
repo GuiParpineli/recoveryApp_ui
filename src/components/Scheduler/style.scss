@@ -1,0 +1,51 @@
+.scheduler-main-container {
+  padding: 2px;
+  margin: 20px;
+  border-radius: 30px;
+  background: var(--secondary);
+
+  .header-calendar {
+    color: white;
+    display: flex;
+    gap: 10px;
+    border-radius: 20px;
+    padding: 10px;
+      align-items: center;
+
+    .btn-year {
+      background: var(--primary);
+      border-radius: 20px;
+      border: 0;
+      padding: 5px;
+      margin: 0 2px 0 2px;
+    }
+
+    .btn-all-months {
+      padding: 5px;
+      background: var(--primary);
+      border-radius: 20px;
+      border: 0;
+    }
+  }
+
+  .scheduler-week-container {
+    overflow-x: scroll;
+    width: 100%;
+    max-height: 600px;
+    display: inline-flex;
+  }
+
+  &.week-view {
+    overflow-y: scroll;
+  }
+
+  .scheduler-week-days {
+    width: 100%;
+
+    ul {
+      display: inline-flex;
+      list-style: none;
+      gap: 10px;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.input-task-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+  .task.create {
+    text-align: center;
+  }
+
+  input {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    border-radius: 30px;
+    padding: 5px;
+    margin: 2px;
+    border: 0;
+    background: #000000;
+    color: #ffffff;
+    filter: invert(0.8) ;
+  }
+  textarea {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 2px;
+    border: 0;
+    background: #000000;
+    color: #ffffff;
+    filter: invert(0.8) ;
+  }
+
+  .btn-task {
+    display: flex;
+    justify-content: end;
+
+    .cancel-task {
+      padding: 8px;
+      border: 0;
+      border-radius: 30px;
+      background: red;
+      margin: 3px;
+    }
+
+    .confirm-task {
+      padding: 8px;
+      border: 0;
+      border-radius: 30px;
+      background: var(--primary);
+      margin: 3px;
+    }
+  }
+  .cancel-task:active{
+    transform: scale(1.2);
+  }
+  .confirm-task:active{
+    transform: scale(1.2);
+  }
+}

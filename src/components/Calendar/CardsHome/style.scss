@@ -1,0 +1,42 @@
+.container-card-dashboard {
+  background: var(--secondary);
+  padding: 10px;
+  border-radius: 30px;
+  color: white;
+  margin: 20px;
+
+  .title-cards-home {
+    padding: 10px;
+  }
+
+  .card-container {
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+    text-align: center;
+
+    .cards {
+      width: 20%;
+      height: fit-content;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+
+      h1 {
+        font-size: 4em;
+        margin-top: 0;
+      }
+    }
+  }
+
+  .card-down-container {
+
+    .cards-down {
+      display: flex;
+      padding: 10px;
+      justify-content: space-around;
+    }
+
+  }
+}

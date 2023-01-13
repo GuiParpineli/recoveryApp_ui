@@ -1,0 +1,89 @@
+.month-card {
+  min-height: 230px;
+  padding: 5px;
+  background: var(--primary);
+  border-radius: 30px;
+
+  .input-task-container-main{
+    display: none;
+  }
+  .task-details-view{
+    display: none;
+  }
+
+  .week-day {
+    display: inline-flex;
+    padding: 20px;
+  }
+  .month-cards-week-days{
+    display: inline-flex;
+  }
+
+  .month-cards-header {
+    font-size: large;
+    font-weight: bolder;
+    text-align: center;
+  }
+
+  .week {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  &.week-view {
+    width: 100vw;
+
+  .input-task-container-main {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    left: 50%;
+    margin: 40px;
+    transform: translate(-50%);
+    z-index: 2;
+    background: var(--secondary);
+    border-radius: 30px;
+    padding: 50px;
+  }
+
+    .task-details-view{
+      display: flex;
+      flex-wrap: wrap;
+      position: absolute;
+      left: 50%;
+      margin: 40px;
+      transform: translate(-50%);
+      z-index: 2;
+      background: var(--secondary);
+      border-radius: 30px;
+      padding: 50px;
+    }
+
+    .week{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      font-size: 1.4em;
+      font-weight: bolder;
+      padding: 8px;
+      border-bottom: white solid 1px;
+      border-top: white solid 1px;
+    }
+
+
+    .month-cards-header {
+      font-size: 2em;
+    }
+    .month-cards-week-days {
+      display: flex;
+      font-size: 18px;
+      justify-content: space-around;
+      .week-day{
+        width: 100px;
+      }
+    }
+
+  }
+}

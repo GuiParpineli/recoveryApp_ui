@@ -1,0 +1,27 @@
+.calendar-days {
+
+  .add-task-btn {
+    display: none;
+  }
+
+  &.week-view {
+    border-right: white solid 1px;
+    border-left: white solid 1px;
+
+
+    .today{
+      font-size: 1.5em;
+      padding: 10px;
+      background: rgba(46, 47, 58, 0.2);
+    }
+
+    .add-task-btn {
+      display: block;
+      align-items: center;
+      background: none;
+      border: 0;
+      font-size: 18px;
+    }
+
+  }
+}

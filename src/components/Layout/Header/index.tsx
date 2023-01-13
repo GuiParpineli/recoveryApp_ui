@@ -10,7 +10,7 @@ export function Header() {
     const {userData} = useUserData()
     const navigate = useNavigate()
 
-   /* function logout() {
+    function logout() {
         changeToken("")
         deleteToken()
         navigate("/login")
@@ -23,7 +23,7 @@ export function Header() {
         ) {
             navigate("/login")
         }
-    }, [token])*/
+    }, [token])
 
     return (
         <header className="header-main">
@@ -46,8 +46,8 @@ export function Header() {
                 <button className="notification-button">
                     <span className="material-symbols-outlined"> notifications </span>
                 </button>
-                <button  className="logout-button">
-                    <span  className="material-symbols-outlined"> logout </span>
+                <button className="logout-button">
+                    <span className="material-symbols-outlined"> logout </span>
                 </button>
             </div>
         </header>

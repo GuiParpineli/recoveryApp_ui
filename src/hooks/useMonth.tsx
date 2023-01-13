@@ -1,6 +1,10 @@
-import {createContext, useContext, useState} from "react";
+import {createContext, Dispatch, useContext, useState} from "react";
 
-const MonthContext = createContext({})
+type context ={
+    month: string[]
+    changeMonth: Dispatch<string[]>
+}
+const MonthContext = createContext({} as context)
 type propsProvider = { children: React.ReactElement }
 
 export function MonthProvider(props: propsProvider) {
@@ -20,7 +24,7 @@ export function MonthProvider(props: propsProvider) {
         "December",
     ])
 
-    function changeMonth(monthReceived: [string]) {
+    function changeMonth(monthReceived: string[]) {
         if (monthReceived !== month) {
             setMonth(monthReceived)
         }

@@ -1,0 +1,30 @@
+.task-container-day {
+  display: none;
+}
+
+.week-view {
+  .task-container-day {
+    display: flex;
+    flex-wrap: wrap;
+
+    .task-calendar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 4px;
+
+      .taskday {
+        padding: 10px;
+        justify-content: center;
+        border-radius: 20px;
+        background: #2e2f3a;
+        border: var(--primary) solid 4px;
+
+        p {
+          font-weight: 300;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

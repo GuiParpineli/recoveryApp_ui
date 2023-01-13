@@ -1,0 +1,31 @@
+.main-login {
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: relative;
+
+  .container-main-login {
+    display: flex;
+
+    .logo-container-login {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+
+      .logo {
+        width: 30%;
+        height: 30%;
+        min-width: 25em;
+        top: 80%;
+        padding: 10px;
+      }
+    }
+  }
+
+  .container-footer-login p{
+    text-align: center;
+    padding: 5em;
+    color: black;
+  }
+}

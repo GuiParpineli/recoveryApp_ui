@@ -9,7 +9,7 @@ export const Day = styled.div`
   cursor: pointer;
   border-radius: 20px;
 
-  ${props => props.state === "nonPertenceMonth" &&
+  ${(props: { state: string; }) => props.state === "nonPertenceMonth" &&
           css`
             opacity: 0.3;
             cursor: default;

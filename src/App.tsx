@@ -6,6 +6,8 @@ import {UserDataProvider} from "./hooks/useUserData";
 import {CalendarProvider} from "./hooks/useCalendar";
 import {TokenProvider} from "./hooks/useToken";
 import {MonthProvider} from "./hooks/useMonth";
+import {Login} from "./pages/Login";
+import {MainPage} from "./pages/MainPage";
 
 function App() {
     const [count, setCount] = useState(0)
@@ -14,7 +16,16 @@ function App() {
             {
                 path: "",
                 element: <Home/>,
-                children: []
+                children: [
+                    {
+                        path:"",
+                        element:<MainPage/>
+                    }
+                ]
+            },
+            {
+                path: "login",
+                element: <Login/>
             }
         ]
     )
