@@ -61,7 +61,7 @@ export function DayCard(props: monthProps) {
     // @ts-ignore
     return (
         <div className={`calendar-days ${calendarTheme}`}>
-            <div
+            <Day
                 // @ts-ignore
                 ref={today}
                 className={calendarTheme}
@@ -83,7 +83,7 @@ export function DayCard(props: monthProps) {
                         />
                     )
                 }
-            </div>
+            </Day>
         </div>
     )
 }
