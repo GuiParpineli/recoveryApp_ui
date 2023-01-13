@@ -1,0 +1,101 @@
+.header-main {
+  display: inline-flex;
+  gap: 10px;
+
+  .user-name {
+    display: flex;
+    font-weight: bolder;
+    align-items: center;
+    font-size: 1.2em;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+  }
+
+  .logo-header-home {
+    justify-content: left;
+
+    img {
+      width: 10%;
+      min-width: 100px;
+      padding: 10px;
+    }
+  }
+
+  .perfil-container {
+    display: flex;
+    border-radius: 10px;
+    align-items: center;
+    gap: 10px;
+
+    button {
+      border: none;
+      background: var(--primary);
+      color: #ffffff;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 5px;
+    }
+
+    button:hover {
+      color: black;
+    }
+
+    button:active {
+      transform: scale(1.2);
+    }
+  }
+
+  .header-main-input {
+    display: flex;
+    width: 60%;
+    position: relative;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+
+    input {
+      width: 100%;
+      min-width: 100px;
+      color: black;
+      border-radius: 30px;
+      border: var(--secondary) solid 2px;
+      padding: 10px;
+      background: white;
+    }
+
+    input:focus {
+      transform: scale(1.1);
+    }
+
+  }
+
+  .search-container-icon {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .search-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      margin-right: 180px;
+      border-radius: 10px;
+      background: var(--primary);
+    }
+
+    button:hover {
+      color: #000000;
+    }
+
+    button:active {
+      color: white;
+      transform: scale(1.3);
+    }
+
+
+  }
+}

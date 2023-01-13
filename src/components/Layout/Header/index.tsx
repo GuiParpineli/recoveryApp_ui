@@ -1,3 +1,5 @@
+import "./style.scss"
+
 import {useToken} from "../../../hooks/useToken";
 import {useUserData} from "../../../hooks/useUserData";
 import {useNavigate} from "react-router-dom";
@@ -8,7 +10,7 @@ export function Header() {
     const {userData} = useUserData()
     const navigate = useNavigate()
 
-    function logout() {
+   /* function logout() {
         changeToken("")
         deleteToken()
         navigate("/login")
@@ -21,7 +23,7 @@ export function Header() {
         ) {
             navigate("/login")
         }
-    }, [token])
+    }, [token])*/
 
     return (
         <header className="header-main">
@@ -44,8 +46,8 @@ export function Header() {
                 <button className="notification-button">
                     <span className="material-symbols-outlined"> notifications </span>
                 </button>
-                <button onClick={logout} className="logout-button">
-                    <span onClick={logout} className="material-symbols-outlined"> logout </span>
+                <button  className="logout-button">
+                    <span  className="material-symbols-outlined"> logout </span>
                 </button>
             </div>
         </header>

@@ -1,20 +1,16 @@
 import "./style.scss"
 import {Outlet} from "react-router-dom";
-import {Input} from "../../components/Layout/elements/Input";
+import {Header} from "../../components/Layout/Header";
+import {Sidebar} from "../../components/Layout/Sidebar";
 
 export function Home() {
     return (
         <div className="home">
             <div className="home-header">
-                <h1>Hello world</h1>
-                <Input
-                    labelText="teste"
-                    text="text"
-                    inputType="number"
-                />
+                <Header/>
             </div>
             <div className="home-sidebar">
-
+               <Sidebar/>
             </div>
             <div className="home-content">
                 <Outlet/>
