@@ -3,22 +3,24 @@ import {Dispatch, useEffect, useRef, useState} from "react";
 import {useCalendar} from "../../../hooks/useCalendar";
 import {TasksCardTitle} from "../TasksCardTitle";
 import {Day} from "../CalendarStyled";
-import {task} from "../MonthCard";
+import {scheduler, task} from "../MonthCard";
 import moment from "moment";
 
-type monthProps ={
+type monthProps = {
     day: moment.Moment,
     month: string,
     year: number,
-    tasks: task | undefined,
-    showinputTask : Dispatch<any>,
+    scheduler: scheduler
+    showinputTask: Dispatch<void>,
     showDetailsTask: () => void,
     selectTask: Dispatch<task>,
-    daySelected : Dispatch<string>
+    daySelected: Dispatch<string>
 }
+
 export function DayCard(props: monthProps) {
 
     const [dayState, setDayState] = useState("")
+    // @ts-ignore
     const day = props.day._d
     const [currentMonth, setCurrentMonth] = useState(
         new Date(props.month + props.year))
@@ -29,11 +31,11 @@ export function DayCard(props: monthProps) {
     }
 
     function showDetailsTask() {
-        props.shotDetailsTask()
+        props.showDetailsTask()
     }
 
     useEffect(() => {
-    }, [props.tasks])
+    }, [props])
 
     let today = useRef()
     useEffect(() => {
@@ -41,6 +43,7 @@ export function DayCard(props: monthProps) {
         if (day.getMonth() !== currentMonth.getMonth()) {
             setDayState("nonPertenceMonth")
         }
+        // @ts-ignore
         if (props.day._d.toDateString() === new Date().toDateString()) {
             // @ts-ignore
             today.current.scrollIntoView({block: "center"})
@@ -51,9 +54,11 @@ export function DayCard(props: monthProps) {
     }, [props])
 
     const handleClickDate = () => {
+        // @ts-ignore
         props.daySelected(props.day._d)
     }
 
+    // @ts-ignore
     return (
         <div className={`calendar-days ${calendarTheme}`}>
             <div
@@ -66,11 +71,12 @@ export function DayCard(props: monthProps) {
                     <span className="material-symbols-outlined"> add_task </span>
                 </button>
                 {
-                    props.tasks.map((task: { id?: string; tasks?: string[]; }) =>
+                    props.scheduler.tasks.map(
+                        task =>
                         <TasksCardTitle
-                            key={task.id}
-                // @ts-ignore
-                            data={task}
+                            key={task.planCode}
+                            data={[task]}
+                            // @ts-ignore
                             day={props.day._d.toDateString()}
                             showDetails={showDetailsTask}
                             selectTask={props.selectTask}

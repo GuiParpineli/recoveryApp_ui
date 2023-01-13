@@ -20,9 +20,26 @@ export type task = {
     planCode: string,
     planCustomer: string,
     planCaseType: string,
-    analyst: string[],
-    note: string[],
+    analyst: string,
+    initialDay: number,
+    finalDay: number,
+    note: string
 }
+export type scheduler =
+    {
+        id: string,
+        userId: string,
+        userName: string,
+        tasks: task[ ],
+        links: [
+            {
+                rel: string,
+                href: string,
+                title: string
+            }
+        ]
+    }
+
 export function MonthCard(props: monthCardProps) {
 
     const [value, setValue] = useState(
@@ -35,10 +52,66 @@ export function MonthCard(props: monthCardProps) {
     const [inputVisibility, setInputVisibility] = useState(false)
     const [taskViewDetails, setTaskViewDetails] = useState(false)
     const {month} = useMonth()
-    const [tasks, setTasks] = useState<task>()
+    const [scheduler, setScheduler] = useState<scheduler>(
+        {
+            id: "163fb300-6954-48a4-8f34-1162a4d1f497",
+            userId: "953dd986-c8fa-4d7d-b3ea-483a9304b5e5",
+            userName: "Guilherme",
+            tasks: [
+                {
+                    title: "Dar baixa em plano Xjs34",
+                    planCode: "puy123",
+                    planCustomer: "Cristian  Simsen",
+                    planCaseType: "TECHNICALSUPPORT",
+                    analyst: "gui",
+                    initialDay: 1673376738389,
+                    finalDay: 1673376738389,
+                    note: "checar se foi pago"
+                },
+                {
+                    title: "Dar baixa em plano Xjs34",
+                    planCode: "puy123",
+                    planCustomer: "Cristian  Simsen",
+                    planCaseType: "TECHNICALSUPPORT",
+                    analyst: "gui",
+                    initialDay: 1673376738389,
+                    finalDay: 1673376738389,
+                    note: "checar se foi pago"
+                },
+                {
+                    title: "Dar baixa em plano Xjs34",
+                    planCode: "puy123",
+                    planCustomer: "Cristian  Simsen",
+                    planCaseType: "TECHNICALSUPPORT",
+                    analyst: "gui",
+                    initialDay: 1673376738389,
+                    finalDay: 1673376738389,
+                    note: "checar se foi pago"
+                }
+            ],
+            links: [
+                {
+                    rel: "PLAN",
+                    href: "http://localhost:8080/plan/allbyid?id=4b983164-7b02-4218-ae8a-4dde9d258dbe,5068c5bf-c2e0-4a91-ac4e-84183548fdc3,8e678e06-34de-4c35-bd98-8583ff67a863",
+                    title: "Alberto"
+                }
+            ]
+        }
+    )
+
     const {token} = useToken()
     const [daySelected, setDaySelected] = useState<string>("")
-    const [selectTask, setSelectTask] = useState<task>({} as task)
+    const [selectTask, setSelectTask] = useState<task>({
+            title: "Confirmar pagamento",
+            planCode: "teste",
+            planCustomer: "Alberto  Robson",
+            planCaseType: "SINISTRO",
+            analyst: "gui",
+            initialDay: 1673635938359,
+            finalDay: 1673635938359,
+            note: "Ligar dia 10/02"
+        }
+    )
 
     useEffect(() => {
         setValue(value.year(props.currentYear))
@@ -79,7 +152,7 @@ export function MonthCard(props: monthCardProps) {
             const res =
                 await axios.get("http://localhost:8080/scheduler/all",
                     config)
-            if (res.status === 200) setTasks(res.data)
+            if (res.status === 200) setScheduler(res.data)
         } catch (error) {
             console.log(error)
         }
@@ -145,15 +218,15 @@ export function MonthCard(props: monthCardProps) {
                             {
                                 weeks.map(
                                     (weekDay, index) => {
-                                    return (
+                                        return (
                                             <DayCard
-                                                key={ index+weekDay.toString()}
+                                                key={index + weekDay.toString()}
                                                 day={weekDay}
                                                 month={props.month}
                                                 year={props.currentYear}
-                                                tasks={tasks}
+                                                scheduler={scheduler}
                                                 showinputTask={showInputTask}
-                                                shotDetailsTask={showTaskView}
+                                                showDetailsTask={showTaskView}
                                                 selectTask={selectNewTask}
                                                 daySelected={(daySelected: string) => saveDaySelected(daySelected)}
                                             />
