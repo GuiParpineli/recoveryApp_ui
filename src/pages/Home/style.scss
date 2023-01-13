@@ -1,0 +1,30 @@
+.home {
+  color: black;
+  background-image: url("src/assets/img.png");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: top right;
+  display: grid;
+  grid-template-columns: .5fr 1fr 8fr 1fr;
+
+  .home-header {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-end: 2;
+    background: rgba(255, 255, 255, .5);
+  }
+
+  .home-content {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 4;
+  }
+
+  .home-sidebar {
+    grid-column-start: 1;
+    position: sticky;
+    top: 3%;
+  }
+
+}
