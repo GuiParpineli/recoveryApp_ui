@@ -52,51 +52,53 @@ export function MonthCard(props: monthCardProps) {
     const [inputVisibility, setInputVisibility] = useState(false)
     const [taskViewDetails, setTaskViewDetails] = useState(false)
     const {month} = useMonth()
-    const [scheduler, setScheduler] = useState<scheduler>(
-        {
-            id: "163fb300-6954-48a4-8f34-1162a4d1f497",
-            userId: "953dd986-c8fa-4d7d-b3ea-483a9304b5e5",
-            userName: "Guilherme",
-            tasks: [
-                {
-                    title: "Dar baixa em plano Xjs34",
-                    planCode: "puy123",
-                    planCustomer: "Cristian  Simsen",
-                    planCaseType: "TECHNICALSUPPORT",
-                    analyst: "gui",
-                    initialDay: 1673376738389,
-                    finalDay: 1673376738389,
-                    note: "checar se foi pago"
-                },
-                {
-                    title: "Dar baixa em plano Xjs34",
-                    planCode: "puy123",
-                    planCustomer: "Cristian  Simsen",
-                    planCaseType: "TECHNICALSUPPORT",
-                    analyst: "gui",
-                    initialDay: 1673376738389,
-                    finalDay: 1673376738389,
-                    note: "checar se foi pago"
-                },
-                {
-                    title: "Dar baixa em plano Xjs34",
-                    planCode: "puy123",
-                    planCustomer: "Cristian  Simsen",
-                    planCaseType: "TECHNICALSUPPORT",
-                    analyst: "gui",
-                    initialDay: 1673376738389,
-                    finalDay: 1673376738389,
-                    note: "checar se foi pago"
-                }
-            ],
-            links: [
-                {
-                    rel: "PLAN",
-                    href: "http://localhost:8080/plan/allbyid?id=4b983164-7b02-4218-ae8a-4dde9d258dbe,5068c5bf-c2e0-4a91-ac4e-84183548fdc3,8e678e06-34de-4c35-bd98-8583ff67a863",
-                    title: "Alberto"
-                }
-            ]
-        }
+    const [scheduler, setScheduler] = useState<scheduler[]>([
+
+            {
+                id: "163fb300-6954-48a4-8f34-1162a4d1f497",
+                userId: "953dd986-c8fa-4d7d-b3ea-483a9304b5e5",
+                userName: "Guilherme",
+                tasks: [
+                    {
+                        title: "Dar baixa em plano Xjs34",
+                        planCode: "puy123",
+                        planCustomer: "Cristian  Simsen",
+                        planCaseType: "TECHNICALSUPPORT",
+                        analyst: "gui",
+                        initialDay: 1673376738389,
+                        finalDay: 1673376738389,
+                        note: "checar se foi pago"
+                    },
+                    {
+                        title: "Dar baixa em plano Xjs34",
+                        planCode: "puy123",
+                        planCustomer: "Cristian  Simsen",
+                        planCaseType: "TECHNICALSUPPORT",
+                        analyst: "gui",
+                        initialDay: 1673376738389,
+                        finalDay: 1673376738389,
+                        note: "checar se foi pago"
+                    },
+                    {
+                        title: "Dar baixa em plano Xjs34",
+                        planCode: "puy123",
+                        planCustomer: "Cristian  Simsen",
+                        planCaseType: "TECHNICALSUPPORT",
+                        analyst: "gui",
+                        initialDay: 1673376738389,
+                        finalDay: 1673376738389,
+                        note: "checar se foi pago"
+                    }
+                ],
+                links: [
+                    {
+                        rel: "PLAN",
+                        href: "http://localhost:8080/plan/allbyid?id=4b983164-7b02-4218-ae8a-4dde9d258dbe,5068c5bf-c2e0-4a91-ac4e-84183548fdc3,8e678e06-34de-4c35-bd98-8583ff67a863",
+                        title: "Alberto"
+                    }
+                ]
+            }
+    ]
     )
 
     const {token} = useToken()
@@ -123,7 +125,6 @@ export function MonthCard(props: monthCardProps) {
     function updateMonth(e: React.MouseEvent<HTMLDivElement>) {
         props.updateMonth([props.month])
         changeCalendarTheme("week-view")
-        console.log(calendarTheme)
     }
 
     function showInputTask() {
@@ -137,12 +138,10 @@ export function MonthCard(props: monthCardProps) {
 
     function selectNewTask(e: React.SetStateAction<task>) {
         setSelectTask(e)
-        console.log(e)
     }
 
     function saveDaySelected(e: string) {
         setDaySelected(e)
-        console.log(daySelected)
     }
 
     const config = {headers: {Authorization: `Bearer ${token}`}}
@@ -152,15 +151,16 @@ export function MonthCard(props: monthCardProps) {
             const res =
                 await axios.get("http://localhost:8080/scheduler/all",
                     config)
-            if (res.status === 200) setScheduler(res.data)
+            if (res.status === 200) {
+                setScheduler(res.data)
+            }
         } catch (error) {
             console.log(error)
         }
     }
 
     useEffect(() => {
-        fetchTasks().then(r => {
-        })
+        fetchTasks()
     }, [])
 
     return (

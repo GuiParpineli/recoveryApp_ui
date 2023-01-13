@@ -50,6 +50,7 @@ export function TaskInput(props: { daySelected: string; showinputTask: () => voi
                 }
                 console.log(dataScheduler)
                 await sendSchedulerTask(dataScheduler)
+                console.log(response.data)
                 props.fecthTasks()
             } else {
                 setSaveSucessfully(false)

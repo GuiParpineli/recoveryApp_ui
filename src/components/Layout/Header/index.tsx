@@ -46,8 +46,8 @@ export function Header() {
                 <button className="notification-button">
                     <span className="material-symbols-outlined"> notifications </span>
                 </button>
-                <button className="logout-button">
-                    <span className="material-symbols-outlined"> logout </span>
+                <button className="logout-button" onClick={logout}>
+                    <span onClick={logout} className="material-symbols-outlined"> logout </span>
                 </button>
             </div>
         </header>
