@@ -8,6 +8,10 @@ import {TokenProvider} from "./hooks/useToken";
 import {MonthProvider} from "./hooks/useMonth";
 import {Login} from "./pages/Login";
 import {MainPage} from "./pages/MainPage";
+import {PlanDetails} from "./pages/PlanDetails";
+import {Cadastros} from "./pages/Cadastros";
+import {Agenda} from "./pages/Agenda";
+import {Dashboard} from "./pages/Dashboard";
 
 function App() {
     const [count, setCount] = useState(0)
@@ -18,8 +22,24 @@ function App() {
                 element: <Home/>,
                 children: [
                     {
-                        path:"",
-                        element:<MainPage/>
+                        path: "",
+                        element: <MainPage/>
+                    },
+                    {
+                        path: "dashboard",
+                        element: <Dashboard/>
+                    },
+                    {
+                        path: "agenda",
+                        element: <Agenda/>
+                    },
+                    {
+                        path: "cadastros",
+                        element: <Cadastros/>
+                    },
+                    {
+                        path: "plandetails/:code",
+                        element: <PlanDetails/>
                     }
                 ]
             },

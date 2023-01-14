@@ -2,7 +2,7 @@ import {createContext, Dispatch, useContext, useState} from "react";
 
 type propsProvider = { children: React.ReactElement }
 
-type user = {
+export type user = {
     id: string,
     name: string,
     lastname: string,

@@ -1,0 +1,62 @@
+.plan-details-container {
+  margin: 20px;
+  background: var(--secondary);
+  padding: 20px;
+  align-items: center;
+  border-radius: 30px;
+  color: white;
+
+  .title-plan-details {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    h1 {
+      width: 50%;
+    }
+
+    .btn-back-details {
+      display: flex;
+      justify-content: end;
+      width: 50%;
+
+      button {
+        padding: 5px;
+        width: 10%;
+        margin: 5px;
+        align-items: center;
+        justify-content: center;
+        background: var(--primary);
+        border-radius: 30px;
+        border: 0;
+      }
+    }
+  }
+
+  .btn-edit-plan {
+    display: flex;
+    justify-content: end;
+    margin: 10px;
+
+    button {
+      padding: 10px;
+      border-radius: 30px;
+      border: 0;
+      background: var(--primary);
+      justify-content: end;
+    }
+  }
+
+  .plan-details {
+    display: grid;
+    grid-template-rows: 1fr .5fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .info-plan {
+      border-radius: 15px;
+      padding: 5px;
+      background: #373a45;
+      margin: 5px;
+    }
+  }
+}

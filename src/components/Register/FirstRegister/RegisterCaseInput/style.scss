@@ -1,0 +1,150 @@
+.case-container {
+  font-weight: bolder;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr .5fr ;
+  background: var(--secondary);
+  color: white;
+  padding: 30px;
+  margin: 20px;
+  border-radius: 30px;
+
+  .casetype-inputs {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: grid;
+    padding: 20px;
+    align-items: center;
+    grid-template-columns: .5fr 1fr;
+    flex-direction: column;
+    gap: 5px;
+
+    input {
+      color: #ffffff;
+      border-radius: 30px;
+      margin: 10px;
+      background: #000000;
+      padding: 10px;
+      filter: invert(0.8) ;
+    }
+
+    select {
+      border-radius: 20px;
+      margin: 10px 0;
+      background: white;
+      color: var(--secondary);
+      font-weight: bold;
+      padding: 10px;
+    }
+
+  }
+
+  .inputs-casecsj {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    align-items: center;
+    padding: 20px;
+    gap: 3px;
+    grid-template-columns: .5fr 1fr;
+
+    select {
+      border-radius: 20px;
+      margin: 10px 0;
+      background: white;
+      color: var(--secondary);
+      font-weight: bold;
+      border: var(--primary) 2px solid;
+      padding: 10px;
+    }
+
+    textarea {
+      color: var(--secondary);
+      border-radius: 10px;
+      margin: 10px 0;
+      background: white;
+      border: var(--primary) 2px solid;
+      padding: 10px;
+    }
+
+     input {
+      color: #ffffff;
+      border-radius: 30px;
+      margin: 10px 0;
+      background: #000000;
+      padding: 10px;
+      filter: invert(0.8) ;
+    }
+
+    .code-plan-input {
+      border-radius: 20px;
+      display: flex;
+      background-color: var(--primary);
+      color: white;
+      justify-content: center;
+      align-items: center;
+      font-weight: bolder;
+      max-height: 50px;
+      p{
+        font-size: 2em;
+      }
+    }
+
+    .input-caseCSJ-observation {
+      grid-column-start: 2;
+    }
+  }
+
+  .btn-case-register {
+    padding: 10px;
+    border-radius: 10px;
+    grid-column-start: 3;
+    grid-column-end: 4;
+
+    .cancel-btn-inputcsj {
+      background: red;
+    }
+
+    .cancel-btn-inputcsj:hover {
+      transform: scale(1.05);
+    }
+
+    .confirm {
+      background: var(--primary);
+    }
+
+    .confirm:hover {
+      transform: scale(1.05);
+    }
+
+    span {
+      color: var(--primary);
+    }
+
+    span:hover {
+      transform: scale(1.2);
+    }
+
+    button {
+      border-radius: 30px;
+      border: 0;
+      margin: 4px;
+      background: none;
+    }
+
+    .add-buttons {
+      display: flex;
+      padding: 3px;
+    }
+
+    .btn-cancel-send {
+      display: flex;
+      justify-content: end;
+
+      button {
+        padding: 20px;
+      }
+    }
+  }
+}

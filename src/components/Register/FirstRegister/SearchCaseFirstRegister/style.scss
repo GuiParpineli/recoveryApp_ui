@@ -1,0 +1,156 @@
+.register-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .plan-notFound {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+    color: red;
+    background: rgba(255, 255, 255, 0.7);
+    margin: 20px;
+    padding: 10px;
+    border-radius: 30px;
+  }
+
+  .search-register-container {
+    position: sticky;
+    top: 0;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    justify-content: center;
+    z-index: 2;
+    background: rgb(255, 255, 255);
+    padding: 10px;
+    border: var(--primary) 2px solid;
+    margin: 20px;
+    border-radius: 30px;
+
+    .input-register {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .input-codeplan {
+        #register {
+          color: var(--secondary);
+        }
+      }
+
+      .title-register {
+        text-align: center;
+        font-weight: bolder;
+        padding: 3px;
+        margin: 0 10px 0 10px;
+        color: var(--secondary);
+      }
+
+      .search-plans {
+        padding: 15px;
+        border-radius: 20px;
+        background: var(--primary);
+        color: white;
+        font-weight: bolder;
+        border: 0;
+      }
+
+      input {
+        margin: 10px;
+        width: 500px;
+        color: black;
+        border-radius: 30px;
+        background: white;
+        padding: 10px;
+      }
+
+    }
+  }
+}
+
+.search-plans-founded {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  font-size: 1.1em;
+  display: grid;
+  grid-template-columns: .5fr 1fr .3fr 1fr .5fr;
+  margin: 20px;
+  padding: 10px;
+  justify-content: center;
+  background: var(--secondary);
+  color: white;
+  border-radius: 20px;
+
+  &.plan-confirmed {
+    opacity: 0.5;
+  }
+
+  h3 {
+    color: var(--primary);
+  }
+
+
+  .btn-confirm-plan {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    justify-content: end;
+    grid-column-end: 5;
+    grid-column-start: 4;
+
+    button {
+      background: var(--primary);
+      padding: 20px;
+      color: white;
+      font-weight: bolder;
+      border-radius: 30px;
+      border: 0;
+      width: 30%;
+    }
+
+    a {
+      border-radius: 30px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      width: 30%;
+      background: var(--primary);
+      align-items: center;
+      display: flex;
+
+      button {
+        background: none;
+        width: 100%;
+      }
+    }
+
+    a:hover {
+      color: #2e2f3a;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      color: #2e2f3a;
+    }
+
+    button:active {
+      transform: scale(.8);
+    }
+
+  }
+
+  .image-product {
+    display: flex;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 80%;
+    }
+  }
+}
+
+
+

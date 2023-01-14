@@ -1,0 +1,23 @@
+.founded-plan {
+  gap: 30px;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  margin: 10px;
+  text-align: center;
+
+  .founded-data {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+
+    .founded-observation {
+      display: flex;
+      border-right: white 1px solid;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+}

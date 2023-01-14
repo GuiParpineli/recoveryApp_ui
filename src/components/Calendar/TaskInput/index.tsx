@@ -31,7 +31,6 @@ export function TaskInput(props: { daySelected: string; showinputTask: () => voi
         title: title,
         planCode: idPlan,
         initialDate: dateSelected,
-        finalDate: Date.parse(finalDate),
         note: observation
     }
 
@@ -89,15 +88,6 @@ export function TaskInput(props: { daySelected: string; showinputTask: () => voi
                            name="title"
                            id="title"
                            onChange={e => setTitle(e.target.value)}
-                    />
-                </div>
-                <div className="data-task-input">
-                    <label htmlFor="data-final">Data Final</label>
-                    <input value={finalDate}
-                           type="date"
-                           name="data-final"
-                           id="data-final"
-                           onChange={e => setFinalDate(e.target.value)}
                     />
                 </div>
                 <div className="id-assinatura">
