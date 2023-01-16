@@ -1,6 +1,8 @@
 import "./style.scss"
-import {JSXElementConstructor, ReactElement, ReactFragment, ReactPortal, useEffect, useState} from "react";
-import {planProps} from "../../../TypesCaseCSJ";
+import {useEffect, useState} from "react";
+import {SinistroRegisterInputs} from "../SinistroRegisterInputs";
+import {MisappropriationRegisterInputs} from "../MisappropriationRegisterInputs";
+import {TechnicalSupportRegisterInputs} from "../TechnicalSupportRegisterInputs";
 
 export function RegisterCaseInput(props: { code: string; setPlanConfirmed: (e: string) => void; }) {
     const [caseType, setCaseType] = useState("")

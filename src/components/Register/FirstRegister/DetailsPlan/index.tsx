@@ -5,7 +5,7 @@ import axios from "axios";
 import {planProps} from "../../../TypesCaseCSJ";
 import "./style.scss"
 
-export function FirstRegisterMain() {
+export function DetailsPlan() {
 
     const {code} = useParams()
     const {token} = useToken()

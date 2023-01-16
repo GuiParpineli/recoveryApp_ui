@@ -1,6 +1,6 @@
 import {user} from "../../hooks/useUserData";
 
-export type linkHeateoas = {
+export type linkHateoas = {
     rel: string,
     href: string,
     title: string
@@ -23,24 +23,37 @@ export type customer =
             complement?: string
         }
     }
+
 export type caseCSJType = {
     type: string,
     id: string,
     date: number,
     stepCSJ: string,
-    resolutionDate: number,
+    resolutionDate: number | null,
     value: number,
-    valueWithDiscount: number,
+    valueWithDiscount?: number,
     coverageValue: number,
-    resolutionType: string,
-    postCode: string,
-    observation: string[],
+    resolutionType: string | null,
+    postCode: string | null,
+    observation: string[] | null,
+    typeCaseCSJ: string,
+    initialTime?: number | Date,
     internalStatus: string,
     externalStatus: string,
-    payMethod: string,
-    chargeBack: boolean,
-    chargeBackDate: number,
-    typeCaseCSJ: string
+    sinistroType?: string,
+    imeiStatus?: boolean,
+    boStatus?: boolean,
+    videoStatus?: boolean,
+    sinistroDate?: number | Date,
+    franchise?: number,
+    franchiseTotalValue?: number,
+    discountValue?: number,
+    payment?: boolean,
+    payMethod?: string,
+    chargeBack?: boolean,
+    chargeBackDate?: number,
+    repairValue?: number,
+    status?: boolean
 }
 
 export type product = {
@@ -65,5 +78,18 @@ export type planProps = {
     customer: customer,
     bondsman: customer,
     caseCSJ?: caseCSJType[],
-    links?: linkHeateoas[]
+    links?: linkHateoas[]
+}
+
+export type planInput = {
+    code: string,
+    value: number,
+    planStatus: boolean,
+    initialDate: number | string,
+    finalDate: number | string | null,
+    analystId: string,
+    productListId: string[],
+    customerId: string,
+    bondsmanId: string,
+    caseCSJId: string[] | null[]
 }

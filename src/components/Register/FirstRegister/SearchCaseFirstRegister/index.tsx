@@ -5,8 +5,9 @@ import {planProps} from "../../../TypesCaseCSJ";
 import {PlanFounded} from "../PlanFounded";
 import {Link} from "react-router-dom";
 import {RegisterCaseInput} from "../RegisterCaseInput";
+import "./style.scss"
 
-export function Cadastros() {
+export function SearchCaseFirstRegister() {
     const [code, setCode] = useState("")
     const [planFounded, setPlanFounded] = useState<planProps | null>(null)
     const [notFound, setNotFound] = useState(false)
@@ -52,8 +53,10 @@ export function Cadastros() {
     useEffect(() => {
             if (planFounded !== null) {
                 planFounded?.caseCSJ!!.map(a => {
+                        console.log(a.externalStatus)
                     if (a.externalStatus === "RECUPERADO") {
                         setCaseClosed(true)
+                        console.log(caseClosed)
                     } else {
                         setCaseClosed(false)
                     }
@@ -99,7 +102,7 @@ export function Cadastros() {
                     <div className="btn-confirm-plan">
                         {caseClosed ?
                             <>
-                                <button onClick={e => confirmPlan()}>
+                                <button onClick={confirmPlan}>
                                     Confirmar Assinatura
                                 </button>
                                 <Link to={`/plandetails/${planFounded?.code}`}>
@@ -125,7 +128,7 @@ export function Cadastros() {
                 planConfirmed === "plan-confirmed" &&
                 <RegisterCaseInput
                     key={planFounded.code + 4}
-                    planFounded={planFounded}
+                    {...planFounded}
                     setPlanConfirmed={setPlanConfirmed}
                 />
             }
