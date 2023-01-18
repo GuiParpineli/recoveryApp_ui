@@ -104,14 +104,14 @@ export function DetailsPlan() {
                                     a => (
                                         <>
                                             <div className="founded-data">
-                                                <h3>Cases do plano:</h3>
+                                                <h3>Casos de Recuperação do plano:</h3>
                                                 <p>Tipo: {a.type} </p>
                                                 <p>Status externo: {a.externalStatus.replace("_", " ")} </p>
                                             </div>
                                             <div className="founded-data">
                                                 <h3>Observações do plano: </h3>
                                                 {
-                                                    Array.from(a.observation).map(
+                                                    a.observation?.map(
                                                         o => (
                                                             <div className="founded-observation">
                                                                 <p>{o}</p>

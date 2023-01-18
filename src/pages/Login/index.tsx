@@ -16,7 +16,7 @@ export function Login() {
             </div>
             <footer className="container-footer-login">
                 <p>
-                    Em caso de duvidas, entre em contato atraves do email exemplo@gmail.com
+                    Em caso de duvidas, entre em contato atraves do email suporte@quarkbyte.com
                 </p>
             </footer>
         </div>

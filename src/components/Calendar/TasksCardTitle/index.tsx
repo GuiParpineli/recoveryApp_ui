@@ -21,18 +21,14 @@ export function TasksCardTitle(props: taskcardProps) {
         props.selectTask(e)
     }
 
-    /*    console.log(props.data)
-        console.log(props.day)
-        console.log(new Date(props.data.tasks[0].initialDay).toDateString())*/
-
+    const today = new Date().toDateString()
     return (
         <div className={`task-container-day ${calendarTheme}`}>
             <div className="task-calendar">
-
                 {
                     props.data.map(
                         a => {
-                            if (props.day === new Date(a.initialDay).toDateString()) {
+                            if (props.day === new Date(a.initialDay).toDateString() ) {
                                 return (
                                     <div className="taskday" onClick={e => showDetailsTask(a)}>
                                         <p> {a.title.toString()} </p>

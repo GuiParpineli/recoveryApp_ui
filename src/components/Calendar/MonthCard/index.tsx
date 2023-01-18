@@ -9,6 +9,7 @@ import axios from "axios";
 import {TaskInput} from "../TaskInput";
 import {TaskCardView} from "../TaskCardView";
 import {DayCard} from "../DayCard";
+import {useUserData} from "../../../hooks/useUserData";
 
 type monthCardProps = {
     month: string,
@@ -16,6 +17,7 @@ type monthCardProps = {
     updateMonth: Dispatch<string[]>
 }
 export type task = {
+    id: string,
     title: string,
     planCode: string,
     planCustomer: string,
@@ -31,7 +33,7 @@ export type scheduler =
         userId: string,
         userName: string,
         tasks: task[ ],
-        links: [
+        links?: [
             {
                 rel: string,
                 href: string,
@@ -42,6 +44,7 @@ export type scheduler =
 
 export function MonthCard(props: monthCardProps) {
 
+    const {userData} = useUserData()
     const [value, setValue] = useState(
         moment().locale("pt").month(props.month).year(props.currentYear)
     )
@@ -52,58 +55,19 @@ export function MonthCard(props: monthCardProps) {
     const [inputVisibility, setInputVisibility] = useState(false)
     const [taskViewDetails, setTaskViewDetails] = useState(false)
     const {month} = useMonth()
-    const [scheduler, setScheduler] = useState<scheduler[]>([
-
-            {
-                id: "163fb300-6954-48a4-8f34-1162a4d1f497",
-                userId: "953dd986-c8fa-4d7d-b3ea-483a9304b5e5",
-                userName: "Guilherme",
-                tasks: [
-                    {
-                        title: "Dar baixa em plano Xjs34",
-                        planCode: "puy123",
-                        planCustomer: "Cristian  Simsen",
-                        planCaseType: "TECHNICALSUPPORT",
-                        analyst: "gui",
-                        initialDay: 1673376738389,
-                        finalDay: 1673376738389,
-                        note: "checar se foi pago"
-                    },
-                    {
-                        title: "Dar baixa em plano Xjs34",
-                        planCode: "puy123",
-                        planCustomer: "Cristian  Simsen",
-                        planCaseType: "TECHNICALSUPPORT",
-                        analyst: "gui",
-                        initialDay: 1673376738389,
-                        finalDay: 1673376738389,
-                        note: "checar se foi pago"
-                    },
-                    {
-                        title: "Dar baixa em plano Xjs34",
-                        planCode: "puy123",
-                        planCustomer: "Cristian  Simsen",
-                        planCaseType: "TECHNICALSUPPORT",
-                        analyst: "gui",
-                        initialDay: 1673376738389,
-                        finalDay: 1673376738389,
-                        note: "checar se foi pago"
-                    }
-                ],
-                links: [
-                    {
-                        rel: "PLAN",
-                        href: "http://localhost:8080/plan/allbyid?id=4b983164-7b02-4218-ae8a-4dde9d258dbe,5068c5bf-c2e0-4a91-ac4e-84183548fdc3,8e678e06-34de-4c35-bd98-8583ff67a863",
-                        title: "Alberto"
-                    }
-                ]
-            }
-    ]
+    const [scheduler, setScheduler] = useState<scheduler>(
+        {
+            id: "163fb300-6954-48a4-8f34-1162a4d1f497",
+            userId: "953dd986-c8fa-4d7d-b3ea-483a9304b5e5",
+            userName: "Guilherme",
+            tasks: []
+        }
     )
 
     const {token} = useToken()
     const [daySelected, setDaySelected] = useState<string>("")
     const [selectTask, setSelectTask] = useState<task>({
+            id: "abs",
             title: "Confirmar pagamento",
             planCode: "teste",
             planCustomer: "Alberto  Robson",
@@ -146,10 +110,10 @@ export function MonthCard(props: monthCardProps) {
 
     const config = {headers: {Authorization: `Bearer ${token}`}}
 
-    async function fetchTasks() {
+    async function fetchScheduler() {
         try {
             const res =
-                await axios.get("http://localhost:8080/scheduler/all",
+                await axios.get(`http://localhost:8080/scheduler/byUser?id=${userData.id}`,
                     config)
             if (res.status === 200) {
                 setScheduler(res.data)
@@ -160,8 +124,9 @@ export function MonthCard(props: monthCardProps) {
     }
 
     useEffect(() => {
-        fetchTasks()
+        fetchScheduler()
     }, [])
+
 
     return (
         <div className={`month-card ${calendarTheme}`} onClick={updateMonth}>
@@ -172,7 +137,7 @@ export function MonthCard(props: monthCardProps) {
                     <TaskInput
                         showinputTask={showInputTask}
                         daySelected={daySelected}
-                        fecthTasks={() => fetchTasks()}
+                        fecthTasks={() => fetchScheduler()}
                     />
                 </div>
             }
@@ -181,6 +146,8 @@ export function MonthCard(props: monthCardProps) {
                 <div className="task-details-view">
                     <TaskCardView
                         showTaskview={showTaskView}
+                        fecthTasks={fetchScheduler}
+                        schedulerId={scheduler.id}
                         taskSelected={selectTask}
                     />
                 </div>

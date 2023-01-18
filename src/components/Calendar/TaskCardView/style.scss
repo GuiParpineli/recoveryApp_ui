@@ -1,20 +1,33 @@
 .task-view-main {
   background: var(--secondary);
-  padding: 10px;
 
-  .close-button {
-    display: flex;
-    justify-content: end;
+  .task-view-content {
 
-    .close-btn {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 30px;
-      width: 30px;
-      border-radius: 50%;
-      background: var(--primary);
+  }
+
+  .task-view-btn {
+    button {
+      background: red;
+      padding: 5px;
       border: 0;
+      border-radius: 30px;
     }
   }
-}
+
+    .close-button {
+      display: flex;
+      justify-content: end;
+
+      .close-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background: var(--primary);
+        border: 0;
+      }
+
+    }
+  }

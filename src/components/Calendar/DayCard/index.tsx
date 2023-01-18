@@ -10,7 +10,7 @@ type monthProps = {
     day: moment.Moment,
     month: string,
     year: number,
-    scheduler: scheduler[]
+    scheduler: scheduler
     showinputTask: Dispatch<void>,
     showDetailsTask: () => void,
     selectTask: Dispatch<task>,
@@ -70,17 +70,14 @@ export function DayCard(props: monthProps) {
                     <span className="material-symbols-outlined"> add_task </span>
                 </button>
                 {
-                    props.scheduler.map(
-                        scheduler =>
                         <TasksCardTitle
-                            key={scheduler.id}
-                            data={scheduler.tasks}
+                            key={props.scheduler.id}
+                            data={props.scheduler.tasks}
                             // @ts-ignore
                             day={props.day._d.toDateString()}
                             showDetails={showDetailsTask}
                             selectTask={props.selectTask}
                         />
-                    )
                 }
             </Day>
         </div>
