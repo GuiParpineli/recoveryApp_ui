@@ -56,7 +56,6 @@ export function TaskInput(props: { daySelected: string; showinputTask: () => voi
             console.log(error)
         }
     }
-
     async function sendSchedulerTask(data: { user: string; tasksID: any[]; }) {
         try {
             const response = await axios
